@@ -1,6 +1,11 @@
-  public class StringConcatenation {
+   public class Main {
 
-    public static String concatenateStrings(String str1,  String str2,  String str3) {
+    public static String concatenateStrings(String str1, String str2, String str3) {
+        // Validate input strings to avoid null errors
+        if (str1 == null) str1 = "";
+        if (str2 == null) str2 = "";
+        if (str3 == null) str3 = "";
+
         // Calculate lengths of strings
         int len1 = str1.length();
         int len2 = str2.length();
@@ -16,12 +21,12 @@
         }
 
         // Copy characters from the second string
-        for (int j = 0; j < len2; j++,  i++) {
+        for (int j = 0; j < len2; j++, i++) {
             result[i] = str2.charAt(j);
         }
 
         // Copy characters from the third string
-        for (int k = 0; k < len3; k++,  i++) {
+        for (int k = 0; k < len3; k++, i++) {
             result[i] = str3.charAt(k);
         }
 
@@ -30,12 +35,12 @@
     }
 
     public static void main(String[] args) {
-        String str1 = " Babiano ";
-        String str2 = " Marianne ";
-        String str3 = " Viñas  ";
+        String str1 = "Babiano";
+        String str2 = " Marianne";
+        String str3 = " Vinas";
 
         // Call the concatenateStrings method
-        String concatenatedString = concatenateStrings(str1,  str2,  str3);
-        System.out.println("Concatenated string:  " + concatenatedString);
+        String concatenatedString = concatenateStrings(str1, str2, str3);
+        System.out.println("Concatenated string: " + concatenatedString);
     }
 }
